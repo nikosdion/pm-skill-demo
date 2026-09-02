@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Stable PHP Compatibility"
+  short_description: "Plan compatibility fixes for stable PHP"
+  default_prompt: "Use $php-conservative to audit stable PHP compatibility."

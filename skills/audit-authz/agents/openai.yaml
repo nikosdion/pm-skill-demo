@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Authorisation"
+  short_description: "Audit Joomla controller access controls"
+  default_prompt: "Use $audit-authz to audit this Joomla component’s controllers."

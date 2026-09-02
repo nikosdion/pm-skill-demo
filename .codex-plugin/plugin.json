@@ -1,0 +1,25 @@
+{
+  "name": "pm-skill-demo",
+  "version": "1.0.2",
+  "description": "AI coding assistant skills for managing Joomla software projects",
+  "author": {
+    "name": "Nicholas K. Dionysopoulos",
+    "email": "nicholas@dionysopoulos.me",
+    "url": "https://www.dionysopoulos.me"
+  },
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Project Management Skills for Joomla",
+    "shortDescription": "AI coding assistant skills for managing Joomla software projects",
+    "longDescription": "Reusable Joomla and PHP maintenance, security-audit, translation, and test-scaffolding workflows for AI coding assistants.",
+    "developerName": "Nicholas K. Dionysopoulos",
+    "category": "Developer Tools",
+    "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Audit this Joomla extension for maintenance issues.",
+      "Set up unit and integration tests for this project.",
+      "Address Joomla deprecations in this project."
+    ]
+  }
+}

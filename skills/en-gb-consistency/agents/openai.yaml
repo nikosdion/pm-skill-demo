@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check en-GB Consistency"
+  short_description: "Standardise UI strings to British English"
+  default_prompt: "Use $en-gb-consistency to correct the English language files."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit _JEXEC Guards"
+  short_description: "Find missing Joomla direct-access guards"
+  default_prompt: "Use $audit-jexec to find and fix missing _JEXEC guards."

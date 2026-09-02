@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Controller Exposure"
+  short_description: "Audit privilege scope, task leakage, and uploads"
+  default_prompt: "Use $audit-controller-exposure to audit this Joomla component's controllers for privilege mismatches, backend-only task leakage, and unsafe uploads."

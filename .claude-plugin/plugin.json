@@ -1,0 +1,11 @@
+{
+  "name": "pm-skill-demo",
+  "version": "1.0.2",
+  "description": "AI coding assistant skills for managing Joomla software projects",
+  "author": {
+    "name": "Nicholas K. Dionysopoulos",
+    "email": "nicholas@dionysopoulos.me",
+    "url": "https://www.dionysopoulos.me"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Unit and Integration Tests"
+  short_description: "Implement Unit Tests using PHPUnit and E2E Integration Tests using Docker"
+  default_prompt: "Use $e2e-tests to set up unit and integration tests for this project."

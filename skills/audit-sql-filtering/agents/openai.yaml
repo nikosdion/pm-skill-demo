@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit SQL Filtering"
+  short_description: "Audit Joomla filter values used in SQL"
+  default_prompt: "Use $audit-sql-filtering to audit unsafe values flowing into SQL."

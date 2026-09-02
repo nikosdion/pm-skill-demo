@@ -1,0 +1,4 @@
+interface:
+  display_name: "Address Joomla Deprecations"
+  short_description: "Audit and plan Joomla deprecation fixes"
+  default_prompt: "Use $joomla-deprecations to address Joomla deprecations in this project."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Translate UI Strings"
+  short_description: "Maintain Joomla UI translations"
+  default_prompt: "Use $machine-translation to complete and check the UI translations."

@@ -1,0 +1,7 @@
+{
+  "name": "pm-skill-demo",
+  "version": "1.0.2",
+  "description": "AI coding assistant skills for managing Joomla software projects",
+  "contextFileName": "QWEN.md",
+  "displayName": "Project Management Skills for Joomla"
+}

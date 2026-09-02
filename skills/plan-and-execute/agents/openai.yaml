@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan and Execute"
+  short_description: "Plan and implement a complex task"
+  default_prompt: "Use $plan-and-execute to plan and implement this complex task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Upcoming PHP Compatibility"
+  short_description: "Prepare code for the upcoming PHP release"
+  default_prompt: "Use $php-upcoming to audit upcoming PHP compatibility."
