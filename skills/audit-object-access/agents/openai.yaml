@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Object Access"
+  short_description: "Find IDOR and record isolation failures"
+  default_prompt: "Use $audit-object-access to audit this Joomla extension's object-level access controls."

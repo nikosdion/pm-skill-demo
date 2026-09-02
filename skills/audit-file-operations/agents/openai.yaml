@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit File Operations"
+  short_description: "Find traversal and unsafe filesystem access"
+  default_prompt: "Use $audit-file-operations to audit this Joomla extension's filesystem operations."

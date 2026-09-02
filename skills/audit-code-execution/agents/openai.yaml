@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Code Execution"
+  short_description: "Trace data into server execution sinks"
+  default_prompt: "Use $audit-code-execution to audit this Joomla extension's server-side execution sinks."

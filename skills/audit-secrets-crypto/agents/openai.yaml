@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Secrets and Crypto"
+  short_description: "Review credentials, tokens, and cryptography"
+  default_prompt: "Use $audit-secrets-crypto to audit this Joomla extension's secrets and cryptography."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Sensitive Output"
+  short_description: "Review non-HTML output and cache isolation"
+  default_prompt: "Use $audit-sensitive-output to audit this Joomla extension's non-HTML output sinks."

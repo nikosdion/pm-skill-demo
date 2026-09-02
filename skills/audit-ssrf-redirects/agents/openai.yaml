@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit SSRF and Redirects"
+  short_description: "Review outbound requests and redirects"
+  default_prompt: "Use $audit-ssrf-redirects to audit this Joomla extension's outbound URL flows."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Cross-Site Scripting"
+  short_description: "Trace unsafe data into browser output"
+  default_prompt: "Use $audit-xss to audit this Joomla extension for cross-site scripting."

@@ -128,17 +128,49 @@ Claude Code exposes the following workflows as `/pm-skill-demo:<name>` slash com
 
 Security check for the controllers of a Joomla! component. Ensures there's appropriate anti-CSRF and authorisation (not just authentication) checks throughout.
 
+### `audit-code-execution`
+
+Trace attacker-influenced data into server-side execution sinks: OS commands, dynamic PHP execution or inclusion, unsafe deserialisation, and attacker-selected callables or classes.
+
 ### `audit-controller-exposure`
 
 Security check for Joomla! controllers covering what `audit-authz` and `audit-sql-filtering` don't: mismatched privilege checks (right kind of check, wrong permission/asset), backend-only tasks reachable from frontend/api controllers (or vice versa), and unsafe file uploads (allow-listing, predictable paths/names, execution in the storage location, path traversal).
+
+### `audit-file-operations`
+
+Audit attacker-influenced filesystem paths and archive entries for traversal, arbitrary file access or modification, dynamic inclusion, symlink escape, and Zip Slip.
 
 ### `audit-jexec`
 
 Make sure the `defined('_JEXEC') || die;` line appears in every distributed file of a Joomla! extension. This excludes vendored dependencies.
 
+### `audit-object-access`
+
+Audit per-record and collection access outside the controller gate for IDOR/BOLA, ownership bypass, unsafe mass assignment, and cross-user or cross-tenant leakage.
+
+### `audit-package-surface`
+
+Inspect the actual release artifact for unintended files and entry points, unsafe installer or upgrade behaviour, unnecessary production code, and vulnerable locked dependencies.
+
+### `audit-secrets-crypto`
+
+Audit exposed credentials, predictable security tokens, password handling, signing and comparison flaws, cryptographic misuse, and key lifecycle.
+
+### `audit-sensitive-output`
+
+Audit non-HTML output sinks — response headers, downloads, CSV exports, logs, errors, outbound mail, and caches — for injection and unintended disclosure.
+
 ### `audit-sql-filtering`
 
 Audit the component for unsafe validation/escaping of filter, user-state, and user-input values that end up in SQL queries (a source of blind SQL injection). Reports each location with a severity estimate and proposed mitigations for review.
+
+### `audit-ssrf-redirects`
+
+Audit attacker-influenced URL flows for server-side request forgery, redirect-based allow-list bypasses, credential forwarding, and open redirects.
+
+### `audit-xss`
+
+Trace attacker-influenced data into HTML, attributes, URLs, inline JavaScript, embedded JSON, rich text, and DOM insertion sinks to find reflected, stored, and DOM-based XSS.
 
 ### `e2e-tests`
 

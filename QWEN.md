@@ -20,3 +20,4 @@ Do not hand-copy individual files into `~/.qwen/extensions/` — that misses `co
 
 - The `description` frontmatter field is the trigger — be precise. Too broad and the skill fires spuriously; too narrow and it misses.
 - `audit-authz`, `audit-sql-filtering`, and `audit-controller-exposure` cross-reference each other so their controller-security scopes don't overlap. Keep the cross-references consistent if any of their scopes change.
+- The remaining security audits are split by sink family (`audit-xss`, `audit-file-operations`, `audit-code-execution`, `audit-ssrf-redirects`, `audit-object-access`, `audit-secrets-crypto`, `audit-package-surface`, and `audit-sensitive-output`). Preserve their boundaries and cross-references instead of combining them into a generic input-validation audit.

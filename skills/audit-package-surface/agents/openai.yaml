@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Package Surface"
+  short_description: "Inspect shipped files and dependencies"
+  default_prompt: "Use $audit-package-surface to audit this Joomla extension's release package."
