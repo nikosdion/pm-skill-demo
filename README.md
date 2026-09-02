@@ -2,6 +2,9 @@
 
 **AI coding assistant skills for managing Joomla software projects**
 
+> [!NOTE]
+> Like the AI coding assistants themselves, this commands and skills plugin works best on Linux (bare metal, VM, or WSL2) and macOS. It's not been tested on Windows; if you're on Windows, please use WSL2.
+
 ## Summary
 
 A triple Claude Code, Codex, and Qwen Code plugin providing AI coding assistant skills to make your life easier developing and maintaining Joomla software projects. 
@@ -14,23 +17,31 @@ They fall into a few broad categories:
 - **Code QA**. Create and maintain end-to-end (E2E) tests for your software using PHPUnit-based Unit Tests and Integration Tests; the latter also requires Docker.
 - **Utility**. Plan and execute long, complex tasks without (too many) hallucinations or loss of goal focus by persisting smaller plan files, using subagents and workflows to execute them.
 
+These are the same commands and skills I use myself – with a few exceptions. My version of the plugin has some features specific to me: my release management, the way I handle dependencies, support for my WordPress and standalone software, specific references to the way I organise my projects on my dev machines, etc. These were very much specific to my own use case. Instead of helping, they would distract and confuse you. I decided to leave those out of this public repository, focusing on the vast majority of commands and skills I've created which are legitimately useful for virtually every use case.
+
 ## Why does this exist?
 
 I have always held the very strong belief that Joomla is stronger when all of its extensions are secure, well-maintained, and compatible with the newest PHP and Joomla versions. It promotes user trust to the Joomla ecosystem, which is to everyone's benefit.
 
+Regardless of your view on generative AI, it cannot be uninvented. It is, therefore, to everyone's benefit if we all use it _responsibly_ to improve Joomla extensions. 
+
 This repository helps towards that direction by giving away the same skills and commands I've been using for months before its original release with my own software – commercial and free, private and public repositories. The goal of having these commands and skills is to decrease the maintenance cost of Joomla extensions – in terms of money, time, and experience necessary.
 
-The security auditing and deprecation handling skills and commands are designed to run even on locally hosted LLMs, costing you single-digit kWh of electricity per project-month, less than what you'd spend doing that work manually. At the time of this writing (September 2nd, 2026) Qwen 3.8 at 4-bit quantisation runs on 24 GB to 32 GB GPUs / Macs and can genuinely handle the task at hand. Tested on RTX 3090, Mac mini M4 32 GB, and MacBook Pro M5 32 GB.
+The security auditing and deprecation handling skills and commands in particular are designed to run even on locally hosted LLMs, costing you single-digit kWh of electricity per project-month, less than what you'd spend doing that work manually. At the time of this writing (September 2nd, 2026) Qwen 3.8 at 4-bit quantisation runs on to 32 GB GPUs / Macs and can genuinely handle the task at hand – you could even use it on 16 to 24 GB GPUs with partial offloading. Tested on RTX 3090 on a Linux desktop with 64 GB RAM, a Mac mini M4 32 GB, and a MacBook Pro M5 32 GB. It's not particularly fast, but it's adequately reliable on small to medium-sized extensions.
 
-The time to audit your software for security issues, and to handle upcoming PHP and Joomla deprecations drops from days to weeks of focused work, to leaving your computer work overnight. The expertise bar for doing this work drops from being a fairly seasoned Joomla and PHP expect with adequate cybersecurity knowledge to being able to read contributed code and test your software. This eliminates the biggest arguments against doing this necessary work, that it takes too much time and requires a level of expertise most developers don't possess.
+Using generative AI, the time to audit your software for security issues, and to handle upcoming PHP and Joomla deprecations drops from days to weeks of focused work, to leaving your computer work overnight. The expertise bar for doing this work drops from being a fairly seasoned Joomla and PHP expert with adequate cybersecurity knowledge to being able to read contributed code and test your software. This eliminates the biggest arguments against doing this necessary work, that it takes too much time and requires a level of expertise most developers don't possess.
 
 ## Examples
 
-These skills are best used as natural language requests.
+These skills are best used as natural language requests. The following examples work best when you're using a large, commercial model. When using locally hosted models, your results will be significantly better if you use specific commands against specific parts of your extension (one component, plugin, or module at a time) due to model size, context, and response length constraints.
 
-- Audit a Joomla component repository for security issues:
+- Audit a Joomla component repository for any and all security issues:
 
   > Audit this Joomla component repository for security issues. Use all of the provided security-audit skills and give me one consolidated report of your findings.
+
+- Audit a Joomla component repository for a specific security issue:
+
+  > Audit this Joomla component repository for anti-CSRF and authorization-vs-authentication bugs using the audit-authz skill.
 
 - Address compatibility with an upcoming PHP release:
 
@@ -56,7 +67,7 @@ These skills are best used as natural language requests.
 
 Run the provided scripts to install these commands and skills into your AI coding assistant.
 
-**Requirements**: `rsync`, `zip`, `unzip`, `php`, and the coding assistant's executable on your `$PATH`.
+**Requirements**: `rsync`, `zip`, `unzip`, `php`, and the coding assistant's executable (`claude`, `codex`, or `qwen`) on your `$PATH`.
 
 ### Claude Code
 
