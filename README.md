@@ -7,37 +7,25 @@
 
 ## Summary
 
-A triple Claude Code, Codex, and Qwen Code plugin providing AI coding assistant skills to make your life easier developing and maintaining Joomla software projects. 
+A triple Claude Code, Codex, and Qwen Code plugin providing AI coding assistant skills to make your life easier developing and maintaining Joomla software projects.
 
-They fall into a few broad categories:
+- **Security auditing**. Audit your extensions for common security issues, generic and Joomla-specific.
+- **Deprecation handling**. Add compatibility with upcoming PHP and Joomla versions, drop no llonger necessary workarounds.
+- **Translation management**. English en-GB consistency, machine-translate to other languages using glossaries.
+- **Code QA**. Create and maintain end-to-end (E2E) tests – unit and integration.
+- **Utility**. Plan and execute long, complex tasks.
 
-- **Security auditing**. Audit your extensions for a number of common security issues plaguing Joomla extensions.
-- **Deprecation handling**. Handle deprecations and backwards incompatible changes in newer and upcoming Joomla and PHP versions.
-- **Translation management**. Ensure en-GB language string consistency, machine-translate to other languages using glossaries of extension-specific terms.
-- **Code QA**. Create and maintain end-to-end (E2E) tests for your software using PHPUnit-based Unit Tests and Integration Tests; the latter also requires Docker.
-- **Utility**. Plan and execute long, complex tasks without (too many) hallucinations or loss of goal focus by persisting smaller plan files, using subagents and workflows to execute them.
+Joomla is stronger when all of its extensions are secure, well-maintained, and compatible with the newest PHP and Joomla versions. It promotes user trust to the Joomla ecosystem, which is to everyone's benefit.
 
-These are the same commands and skills I use myself – with a few exceptions. My version of the plugin has some features specific to me: my release management, the way I handle dependencies, support for my WordPress and standalone software, specific references to the way I organise my projects on my dev machines, etc. These were very much specific to my own use case. Instead of helping, they would distract and confuse you. I decided to leave those out of this public repository, focusing on the vast majority of commands and skills I've created which are legitimately useful for virtually every use case.
-
-## Why does this exist?
-
-I have always held the very strong belief that Joomla is stronger when all of its extensions are secure, well-maintained, and compatible with the newest PHP and Joomla versions. It promotes user trust to the Joomla ecosystem, which is to everyone's benefit.
-
-Regardless of your view on generative AI, it cannot be uninvented. It is, therefore, to everyone's benefit if we all use it _responsibly_ to improve Joomla extensions. 
-
-This repository helps towards that direction by giving away the same skills and commands I've been using for months before its original release with my own software – commercial and free, private and public repositories. The goal of having these commands and skills is to decrease the maintenance cost of Joomla extensions – in terms of money, time, and experience necessary.
-
-The security auditing and deprecation handling skills and commands in particular are designed to run even on locally hosted LLMs, costing you single-digit kWh of electricity per project-month, less than what you'd spend doing that work manually. At the time of this writing (September 2nd, 2026) Qwen 3.8 at 4-bit quantisation runs on to 32 GB GPUs / Macs and can genuinely handle the task at hand – you could even use it on 16 to 24 GB GPUs with partial offloading. Tested on RTX 3090 on a Linux desktop with 64 GB RAM, a Mac mini M4 32 GB, and a MacBook Pro M5 32 GB. It's not particularly fast, but it's adequately reliable on small to medium-sized extensions.
-
-Using generative AI, the time to audit your software for security issues, and to handle upcoming PHP and Joomla deprecations drops from days to weeks of focused work, to leaving your computer work overnight. The expertise bar for doing this work drops from being a fairly seasoned Joomla and PHP expert with adequate cybersecurity knowledge to being able to read contributed code and test your software. This eliminates the biggest arguments against doing this necessary work, that it takes too much time and requires a level of expertise most developers don't possess.
+The commands and skills in this repository help towards that direction. These are the same commands and skills I use every day. They make the security and quality upkeep of your Joomla software cost less, take less of your time, be less error-prone, and no longer require deep expertise.
 
 ## Examples
 
-These skills are best used as natural language requests. The following examples work best when you're using a large, commercial model. When using locally hosted models, your results will be significantly better if you use specific commands against specific parts of your extension (one component, plugin, or module at a time) due to model size, context, and response length constraints.
+You can use the commands as per the Installation instructions below. Alternatively, and most recommended, you can use the skills using natural language requests.
 
-- Audit a Joomla component repository for any and all security issues:
+- Audit a Joomla component repository for every security issue:
 
-  > Audit this Joomla component repository for security issues. Use all of the provided security-audit skills and give me one consolidated report of your findings.
+  > Audit this Joomla component repository for security issues. Use all the provided security-audit skills and give me one consolidated report of your findings.
 
 - Audit a Joomla component repository for a specific security issue:
 
@@ -84,7 +72,7 @@ This script:
 
 Run `/reload-plugins` and `/reload-skills` in an open Claude Code session, or restart your session to take effect.
 
-## Codex
+### Codex
 
 ```bash
 bash install-codex.sh
@@ -102,7 +90,7 @@ Start a new Codex conversation after installation so the new skills are loaded. 
 $pm-skill-demo:audit-authz
 ```
 
-## Qwen Code installation
+### Qwen Code installation
 
 ```bash
 bash install-qwen.sh
@@ -130,6 +118,16 @@ Re-run the appropriate installer after editing the skill files or updating your 
 - Qwen Code: edit or update files freely and restart Qwen Code; rerun `bash install-qwen.sh` only if you moved the repo.
 
 Plugin authors must bump the version in `.claude-plugin/plugin.json`, `.codex-plugin/plugin.json`, and `qwen-extension.json` for every content change so each host reflects the new release.
+
+### Privacy-first and local inference
+
+While a subscription to a service like Claude Code or Codex is fairly inexpensive, it comes at a cost to privacy. This is a show-stopper for many people – usually for ideological, practical, contractual, or regulatory reasons.
+
+The good news is that you don't have to use Big Tech to use these commands and skills, or generative AI in general. There are privacy-first options for both agentic harnesses, and inference. 
+
+On the harness front (the AI coding assistant you interface with) you can always use a FOSS one like [opencode](https://github.com/anomalyco/opencode), [cline](https://github.com/cline/cline), [OpenHands](https://github.com/OpenHands/OpenHands), [crush](https://github.com/charmbracelet/crush), [Zoo Code](https://github.com/Zoo-Code-Org/Zoo-Code/), or [Qwen Code](https://github.com/QwenLM/qwen-code) to name but a few.
+
+On the inference provider front, there are privacy-first inference providers with data sovereignty guarantees. I use [Scaleway's "Serverless" Generative APIs](https://www.scaleway.com/en/generative-apis/), but you should shop around, according to your needs. You can also run inference locally, using a suitably powerful GPU and software like LM Studio or Ollama. Everything will remain on your local network / computer, it will be much cheaper than purchasing inference services, but it will also be _slow_.
 
 ## Commands and skills
 
